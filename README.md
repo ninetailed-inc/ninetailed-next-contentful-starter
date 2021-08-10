@@ -1,5 +1,11 @@
 # Ninetailed Starter for Next.js & Contentful
 
+## Setting up environment 
+
+To use your Contentful space please provide the `CONTENTFUL_GRAPHQL_ENDPOINT` in the .env file (an example is in the repo). The Standard Graphql Endpoint is `https://graphql.contentful.com/content/v1/spaces/{SPACE}`- find more information at the [https://www.contentful.com/developers/docs/references/graphql/](Contentful)
+
+Run the command `yarn codegen`. This will generate the graphql client and types. Redo this whenever you change some gql files.
+
 ## Getting Started
 
 First, run the development server:

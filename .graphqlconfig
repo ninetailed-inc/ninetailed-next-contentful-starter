@@ -1,0 +1,5 @@
+{
+  "name": "Contentful Schema",
+  "schemaPath": "@generated/graphql.schema.json",
+  "extensions": {}
+}

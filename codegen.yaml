@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - ${CONTENTFUL_GRAPHQL_ENDPOINT}:
+      headers:
+        Authorization: Bearer ${CONTENTFUL_ACCESS_TOKEN}
+documents:
+  - './pages/**/*.{gql,graphql}'
+  - './components/**/*.{gql,graphql}'
+generates:
+  ./@generated/gql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-graphql-request'
+  ./@generated/graphql.schema.json:
+    plugins:
+      - 'introspection'

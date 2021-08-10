@@ -1,0 +1,22 @@
+query getAllPageSlugs {
+    pageCollection {
+        items {
+            ...ContentfulEntry
+            slug
+        }
+    }
+}
+
+query getPageBySlug($slug: String) {
+    pageCollection(where: {slug: $slug}, limit: 1) {
+        items {
+            ...ContentfulEntry
+            slug
+            sectionsCollection {
+                items {
+                    ...ContentfulEntry
+                }
+            }
+        }
+    }
+}
