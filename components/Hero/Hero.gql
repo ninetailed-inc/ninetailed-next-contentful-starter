@@ -1,0 +1,12 @@
+fragment Hero on Hero {
+    ...ContentfulEntry
+    headline {
+        json
+    }
+    subline {
+        json
+    }
+    image {
+        url
+    }
+}
