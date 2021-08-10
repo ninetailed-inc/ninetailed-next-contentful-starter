@@ -1,4 +1,16 @@
 fragment Hero on Hero {
+    ...HeroBase
+    ntVariantsCollection(limit: 8) {
+        items {
+            ...HeroBase
+            ntAudience {
+                ...Audience
+            }
+        }
+    }
+}
+
+fragment HeroBase on Hero {
     ...ContentfulEntry
     headline {
         json

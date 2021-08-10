@@ -1,0 +1,4 @@
+fragment Audience on NtAudience {
+    ...ContentfulEntry
+    name
+}

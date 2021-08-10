@@ -1,6 +1,11 @@
 import {GetStaticPropsContext, InferGetStaticPropsType} from "next";
+import {
+    Personalize,
+} from '@ninetailed/client-sdk-nextjs';
+
 import {contentful} from "../lib/contentful-client";
 import {Hero} from '../components/Hero';
+import {unwrapVariants} from "../lib/contentful-utils";
 
 const HomePage = ({
                       page,
@@ -9,7 +14,8 @@ const HomePage = ({
     return (
         <div>{page?.sectionsCollection?.items.map(section => {
             if (section && section.__typename === 'Hero') {
-                return <Hero key={section.sys.id} {...section}/>
+                return <Personalize component={Hero} id={section.sys.id}
+                                    key={section.sys.id} {...unwrapVariants(section)}/>
             }
 
             return null;
